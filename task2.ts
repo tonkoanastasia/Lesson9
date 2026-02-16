@@ -2,25 +2,37 @@
 // Написать класс Stack
 
 class Stack<T> {
+  arr: T[] = [];
+  constructor(...items: T[]) {
+    this.arr = items;
+  }
   /** Добавляет элемент в стек */
-  push(item: T) {}
+  push(item: T) {
+    this.arr.push(item);
+  }
 
   /** Удаляет и возвращает верхний элемент */
-  pop() {}
+  pop() {
+    return this.arr.pop();
+  }
 
   /** Проверяет, пуст ли стек */
-  isEmpty() {}
+  isEmpty() {
+    return this.arr.length === 0;
+  }
 
   /** Количество элементов в стеке */
   get size() {
-    return 0;
+    return this.arr.length;
   }
 
   /** Очищает стек */
-  clear() {}
+  clear() {
+    this.arr.length = 0;
+  }
 }
 
-const stack = new Stack<number>();
+const stack = new Stack<number>(6, 10, 23);
 
 stack.push(1);
 stack.push(2);
